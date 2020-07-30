@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+
+	{% block content %}
+
+<div style="margin-left:40%;margin-top:10%">
+<h2 style="margin-top:10%;margin-bottom:10%;margin-left:-8% ;color:#730D0D">Already have an account?</h2>
+<h4>{{error}}</h4>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-warning" type="submit"style="margin-left:13%;margin-top:2%">Login</button>
+</form>
+    <p style="margin-left:5%;margin-top:7%">Need an account?<a href="{% url 'signupuser' %}">Signup</a></p>
+</div>
+
+    {% endblock %}
